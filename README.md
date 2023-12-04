@@ -17,7 +17,13 @@ docker build -t receiver .
 3. Run the container
 
 ```
-docker run receiver
+docker run -d -p 8000:8000 --name receiver --rm receiver
 ```
 
-4. Send your traffic to `localhost:8000` to see what goes through.
+4. Send your traffic to `localhost:8000`
+
+5. Look through your container logs to see the payload that was sent through.
+
+```
+docker logs receiver
+```
